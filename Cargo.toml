@@ -1,0 +1,10 @@
+[package]
+name = "sim-sandbox"
+version = "0.1.0"
+edition = "2021"
+authors = ["Krzysztof Langner <klangner@gmail.com>"]
+description = "macroquad examples"
+license = "MIT OR Apache-2.0"
+
+
+[dependencies]
