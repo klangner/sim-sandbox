@@ -1,9 +1,15 @@
-use sim_sandbox::sim::elevator::system::System;
-
+use sim_sandbox::sim::elevator::{System, Params};
 
 
 fn main() {
-    let mut system = System::new(10);
-    system.next_step(1);
-    println!("Step 1");
+    let params = Params::default();
+    let mut system = System::new(params);
+
+    for ts in 0..100 {
+        system.next_step(ts);
+        let elevator = &system.elevator;
+        // println!("Step {}: Floor {}", ts, elevator.current_pos);
+    }
+
+    println!("Simulation finished!");
 }
