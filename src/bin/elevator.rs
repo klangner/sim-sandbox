@@ -12,7 +12,7 @@ fn main() -> Result<()> {
 
     let mut system = System::new(params);
 
-    for ts in 0..100 {
+    for ts in 0..system.params.sim_steps {
         system.next_step(ts);
         let elevator = &system.elevator;
         println!("Step {}: state {:?}", ts, elevator.state);

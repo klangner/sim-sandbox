@@ -90,7 +90,7 @@ impl System {
         }
     }
 
-    pub fn next_step(&mut self, _ts: i32) {
+    pub fn next_step(&mut self, _ts: usize) {
         // 1. Generate new people at each floor
         // 2. Move lift to the next floor
         self.elevator.next_step(&self.params);
