@@ -161,4 +161,20 @@ mod tests {
 
         assert_eq!(elevator.state, ElevatorState::Moving(3));
     }
+
+    #[test]
+    fn test_2_orders_2() {
+        let params = Params::new(8, 2, 1);
+        let mut elevator = Elevator::new();
+        elevator.add_order(Order::new(1));
+        
+        for _t in 0..10 {
+            elevator.next_step(&params);
+        }
+
+        elevator.add_order(Order::new(2));
+        elevator.next_step(&params);
+
+        assert_eq!(elevator.state, ElevatorState::Moving(3));
+    }
 }
