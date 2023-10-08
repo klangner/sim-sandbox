@@ -1,0 +1,9 @@
+seed = 360
+
+world_width = 100
+world_height = 100
+population = 1000
+steps_per_gen = 100
+genome_length = 8
+inner_nourons = 2
+mutaton_rate = 0.0
