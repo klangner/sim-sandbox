@@ -1,3 +1,5 @@
+use super::Params;
+
 
 pub struct Cargo {
     pub id: usize,
@@ -31,6 +33,7 @@ pub struct Map {
 }
 
 pub struct System {
+    pub params: Params,
     pub map: Map,
     pub ships: Vec<Ship>,
 }
