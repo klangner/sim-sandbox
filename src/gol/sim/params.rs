@@ -1,13 +1,13 @@
-use serde_derive::Deserialize;
+use serde_derive::{Deserialize, Serialize};
 
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct Map {
     pub width: usize,
     pub height: usize,
 }
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Serialize, Debug)]
 pub struct Params {
     pub num_steps: usize,
     pub map: Map,

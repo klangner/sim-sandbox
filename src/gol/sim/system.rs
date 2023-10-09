@@ -6,7 +6,7 @@ pub struct System {
 }
 
 impl System {
-    pub fn new(params: Params) -> Self {
+    pub fn init(params: Params) -> Self {
         Self { params }
     }
 

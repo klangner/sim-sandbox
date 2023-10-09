@@ -83,7 +83,7 @@ impl Elevator {
 }
 
 impl System {
-    pub fn new(params: Params) -> Self {
+    pub fn init(params: Params) -> Self {
         Self {
             params,
             elevator: Elevator::new(),
@@ -105,7 +105,7 @@ impl System {
 mod tests {
     // use super::*;
 
-    use crate::sim::elevator::{ElevatorState, Params};
+    use crate::elevator::sim::{ElevatorState, Params};
 
     use super::{Elevator, Order};
 

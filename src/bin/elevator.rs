@@ -10,7 +10,8 @@ fn main() -> Result<()> {
     let contents = fs::read_to_string(&param_file)?;
     let params: sim::Params = toml::from_str(&contents)?;
 
-    let mut system = sim::System::new(params);
+    let mut system = sim::System::init(params);
+
 
     for ts in 0..system.params.sim_steps {
         system.next_step(ts);
