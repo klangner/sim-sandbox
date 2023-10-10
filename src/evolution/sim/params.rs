@@ -1,7 +1,7 @@
-use serde_derive::Deserialize;
+use serde_derive::{Deserialize, Serialize};
 
 
-#[derive(Deserialize, Debug)]
+#[derive(Deserialize, Debug, Serialize)]
 pub struct Params {
     pub width: usize,
     pub height: usize,

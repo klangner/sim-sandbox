@@ -60,6 +60,14 @@ impl Universe {
             generation: 0,
         }
     }
+
+    pub fn width(&self) -> usize {
+        self.params.width
+    }
+    
+    pub fn height(&self) -> usize {
+        self.params.height
+    }
     
     pub fn cell_at(&self, row: usize, col: usize) -> &Tile {
         let idx = self.xy_idx(row, col);
