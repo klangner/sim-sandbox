@@ -32,7 +32,7 @@ impl LocalStorage {
     }
 
     // Save current state as an image
-    fn write_image(&self, universe: &Universe) -> Result<()> {
+    fn write_image(&self, universe: &Universe, step: usize) -> Result<()> {
         let mut buffer: Vec<u8> = vec![255; 3*universe.width()*universe.height()]; // Generate the image data
 
         for row in 0..universe.height() {
@@ -48,7 +48,7 @@ impl LocalStorage {
                 }
             }
         }
-        let path = format!("{}/{}.png", &self.folder, &self.name);
+        let path = format!("{}/{:04}.png", &self.folder, step);
         image::save_buffer(&path, &buffer, universe.width() as u32, universe.height() as u32, 
             image::ColorType::Rgb8)?;
 
@@ -63,13 +63,13 @@ fn main() -> Result<()> {
     let params: Params = toml::from_str(&contents)?;
     let storage = LocalStorage::init(&param_file)?;
     storage.write_params(&params)?;
-    let mut universe = Universe::random(params);
+    let mut universe = Universe::random(params.clone());
 
-    for _ in 0..1000 {
+    for t in 0..params.steps_per_generation {
         universe.tick();
+        storage.write_image(&universe, t+1)?;
     }
 
-    storage.write_image(&universe)?;
     println!("Simulation finished!");
 
     Ok(())

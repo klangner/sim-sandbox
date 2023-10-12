@@ -1,7 +1,7 @@
 use serde_derive::{Deserialize, Serialize};
 
 
-#[derive(Deserialize, Debug, Serialize)]
+#[derive(Clone, Deserialize, Debug, Serialize)]
 pub struct Params {
     pub width: usize,
     pub height: usize,
