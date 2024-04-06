@@ -55,7 +55,7 @@ impl Node for Grower {
         todo!()
     }
 
-    fn set_scfm(&self, scfm: f32) {
+    fn set_scfm(&self, _scfm: f32) {
         todo!()
     }
 }
@@ -68,7 +68,7 @@ impl Node for SourceNode {
         todo!()
     }
 
-    fn set_scfm(&self, scfm: f32) {
+    fn set_scfm(&self, _scfm: f32) {
         todo!()
     }
 }
@@ -82,7 +82,7 @@ impl Node for Sink {
         todo!()
     }
 
-    fn set_scfm(&self, scfm: f32) {
+    fn set_scfm(&self, _scfm: f32) {
         todo!()
     }
 }
@@ -137,11 +137,11 @@ impl Model {
 #[cfg(test)]
 mod tests {
 
-    use crate::flow::{model::*, model_ecs::{Edge, World}};
+    // use crate::flow::{model::*, model_ecs::{Edge, World}};
 
     #[test]
     fn test_model() {
-        let mut world = World::new();
+        // let mut world = World::new();
         // let a = world.spawn((Node::new(), SourceNode::new(100.)));
         // let b = world.spawn((Node::new(), Grower::new()));
         // let c = world.spawn((Node::new(), Sink::new()));
